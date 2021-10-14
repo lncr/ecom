@@ -5,6 +5,7 @@ from products.models import Product
 from cart.models import CartProduct
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 
 class ProductModelViewSet(viewsets.ModelViewSet):
@@ -29,7 +30,7 @@ class ProductModelViewSet(viewsets.ModelViewSet):
                 return Response({'error': 'Requested amount is larger than product amount'},
                                  status=status.HTTP_400_BAD_REQUEST)
             
-            product.amount -= request_amount
+            product.amount -= requested_amount
             product.save()
 
             cart_product, created = CartProduct.objects.get_or_create(

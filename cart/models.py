@@ -22,4 +22,4 @@ class CartProduct(models.Model):
 @receiver(post_save, sender=User)
 def create_cart(sender, instance, created, **kwargs):
     if created:
-        Cart.objcets.create(owner=instance)
+        Cart.objects.create(owner=instance)
