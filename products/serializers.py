@@ -11,4 +11,4 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class AmountSerializer(serializers.Serializer):
 
-    amount = serializers.PositiveIntegerField()
+    amount = serializers.IntegerField()
