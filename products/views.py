@@ -64,7 +64,6 @@ class ProductModelViewSet(viewsets.ModelViewSet):
             return Response({'error': 'Current cart does not contain this product'},
                             status=status.HTTP_400_BAD_REQUEST)
 
-
     # @action(permission_classes=[IsAuthenticated, ], methods=['post', 'delete'], detail=True)
     # def cart(self, request, *args, **kwargs):
     #     product = self.get_object()

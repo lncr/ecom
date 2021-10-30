@@ -6,6 +6,7 @@ router = SimpleRouter()
 
 router.register('products', ProductModelViewSet)
 
-urlpatterns = []
+urlpatterns = [
+]
 
 urlpatterns += router.urls

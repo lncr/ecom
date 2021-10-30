@@ -7,6 +7,7 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['id', 'name', 'price', 'amount', 'rating']
+        extra_kwargs = {'name': {'required': False}}
 
 
 class AmountSerializer(serializers.Serializer):
