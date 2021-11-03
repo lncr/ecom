@@ -6,7 +6,7 @@ from products.models import Product
 
 def generate_name():
     number = Product.objects.aggregate(Avg('id')) + 1
-    return f'Product#{number}'
+    return f'Product#{number['id__max']}'
 
 class ProductSerializer(serializers.ModelSerializer):
 
